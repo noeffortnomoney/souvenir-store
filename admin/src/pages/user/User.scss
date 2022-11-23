@@ -1,0 +1,130 @@
+.user {
+	flex: 4;
+	padding: 20px;
+	.title-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.add-btn {
+			width: 80px;
+			border: none;
+			padding: 5px;
+			background-color: teal;
+			border-radius: 5px;
+			cursor: pointer;
+			color: #fff;
+			font-size: 16px;
+		}
+	}
+	.container {
+		display: flex;
+		margin-top: 20px;
+		.show {
+			flex: 1;
+			padding: 20px;
+			box-shadow: 0px 0px 15px -10px rgba($color: #000000, $alpha: 0.75);
+			.show-top {
+				display: flex;
+				align-items: center;
+				.img {
+					width: 40px;
+					height: 40px;
+					border-radius: 50%;
+					object-fit: cover;
+				}
+				.title {
+					display: flex;
+					flex-direction: column;
+					margin-left: 20px;
+					.username {
+						font-weight: 600;
+					}
+					.user-title {
+						font-weight: 300;
+					}
+				}
+			}
+			.show-bottom {
+				margin-top: 20px;
+				.title {
+					font-size: 14px;
+					font-weight: 600;
+					color: rgb(168, 168, 168);
+				}
+				.info {
+					display: flex;
+					align-items: center;
+					margin: 20px 0;
+					color: #444;
+					.icon {
+						font-size: 16px;
+					}
+					.info-title {
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+		.update {
+			flex: 2;
+			padding: 20px;
+			box-shadow: 0px 0px 15px -10px rgba($color: #000000, $alpha: 0.75);
+			margin-left: 20px;
+			.title {
+				font-size: 24px;
+				font-weight: 600;
+			}
+			.update-form {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 20px;
+				.left {
+					.item {
+						display: flex;
+						flex-direction: column;
+						margin-top: 10px;
+						& > label {
+							margin-bottom: 5px;
+							font-size: 14px;
+						}
+						.input {
+							border: none;
+							height: 30px;
+							outline: none;
+							width: 250px;
+							border-bottom: 1px solid gray;
+						}
+					}
+				}
+				.right {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					.upload {
+						display: flex;
+						align-items: center;
+						.img {
+							width: 100px;
+							height: 100px;
+							border-radius: 10px;
+							object-fit: cover;
+							margin-right: 20px;
+						}
+						.icon {
+							cursor: pointer;
+						}
+					}
+					.btn {
+						border-radius: 5px;
+						border: none;
+						padding: 5px;
+						cursor: pointer;
+						background-color: darkblue;
+						color: #fff;
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+}

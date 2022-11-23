@@ -1,0 +1,224 @@
+$primary-color: #af9666;
+
+.slider {
+	padding: 90px 0 90px;
+	background-color: #222;
+	position: relative;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+	color: #fff;
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 60px;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: #000;
+		opacity: 0.85;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+	.text-block {
+		position: relative;
+		z-index: 2;
+		h3 {
+			font-size: 50px;
+			font-weight: bold;
+			line-height: 60px;
+			color: #fff;
+			text-transform: capitalize;
+			letter-spacing: 2px;
+			font-family: 'Dancing Script', cursive;
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+		nav {
+			text-transform: uppercase;
+			font-size: 14px;
+			color: $primary-color;
+			a {
+				color: #fff;
+				text-decoration: none;
+			}
+			.icon {
+				padding: 0 15px;
+				color: #fff;
+				font-size: 10px;
+			}
+		}
+	}
+}
+.shop-container {
+	display: block;
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 100%;
+	.content {
+		width: 100%;
+		display: flex;
+		.left-bar {
+			width: 25%;
+			padding: 0 15px;
+			min-height: 1px;
+			position: relative;
+			.title {
+				width: 100%;
+				display: inline-block;
+				color: #000;
+				padding: 0 0 10px;
+				background: 0 0;
+				font-weight: 500;
+				font-size: 16px;
+				margin: 0 0 25px;
+				position: relative;
+				text-transform: uppercase;
+				border-bottom: 1px solid #e1e1e1;
+			}
+			.categories-list {
+				.category-item {
+					cursor: pointer;
+					list-style-type: none;
+					width: 100%;
+					border-bottom: #e5e5e5 solid 1px;
+					a {
+						display: inline-block;
+						padding: 10px 0;
+						text-decoration: none;
+						font-size: 14px;
+						line-height: 24px;
+						color: #222;
+						text-transform: capitalize;
+					}
+					&:hover {
+						a {
+							color: $primary-color;
+						}
+					}
+				}
+			}
+			.filter {
+				margin-top: 20px;
+			}
+		}
+		.product-content {
+			width: 75%;
+			padding: 0 15px;
+			.list-product {
+				.product-item {
+					margin-right: auto !important;
+					&:nth-child(3) {
+						margin-right: 0 !important;
+					}
+				}
+			}
+			.tool-bar {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 0 35px;
+				margin: 0px 0px 30px;
+				border-bottom: 1px solid #eee;
+				width: 100%;
+				color: #222222;
+				.left-tool {
+					display: flex;
+					.view-mod {
+						.icon {
+							width: 35px;
+							height: 35px;
+							display: inline-block;
+							line-height: 35px;
+							text-align: center;
+							margin-right: 7px;
+							border: #ededed solid 1px;
+							color: #222;
+							cursor: pointer;
+							&.active {
+								background: $primary-color;
+								color: #fff;
+								border-color: $primary-color;
+							}
+
+							&:hover {
+								background: $primary-color;
+								color: #fff;
+								border-color: $primary-color;
+							}
+						}
+					}
+					.ordering {
+						min-width: 250px;
+						select {
+							height: 35px;
+							min-width: 100%;
+							font-family: 'Roboto Slab', serif;
+							background: none;
+							padding: 0 25px 0 22px;
+							border: 1px solid #e5e5e5;
+							text-transform: capitalize;
+							font-size: 14px;
+							outline: none;
+							position: relative;
+							-moz-appearance: none;
+							-webkit-appearance: none;
+							background: transparent;
+							background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+							background-repeat: no-repeat;
+							background-position-x: 100%;
+							background-position-y: 5px;
+							border-radius: 2px;
+						}
+					}
+				}
+				.pagination {
+					.label {
+						margin: 0 10px;
+						display: inline-block;
+						line-height: 35px;
+					}
+					.page-list {
+						display: inline-flex;
+						align-items: center;
+
+						.btn {
+							width: 30px;
+							height: 30px;
+							border: 1px solid $primary-color;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							margin: 0 5px;
+							cursor: pointer;
+							&.active {
+								background-color: $primary-color;
+								color: #fff;
+								pointer-events: none;
+							}
+							&.disabled {
+								background-color: #e5e5e5;
+								color: #fff;
+								border: none;
+								pointer-events: none;
+								cursor: default;
+							}
+							&:hover:not(.disabled) {
+								background-color: $primary-color;
+								color: #fff;
+							}
+							.icon {
+								font-size: 14px;
+								font-weight: 300;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

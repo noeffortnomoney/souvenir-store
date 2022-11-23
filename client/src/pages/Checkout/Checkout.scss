@@ -1,0 +1,151 @@
+$primary-color: #af9666;
+
+.checkout-wrapper {
+	display: block;
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 100%;
+	display: flex;
+	.heading {
+		font-size: 20px;
+		text-transform: uppercase;
+		margin-bottom: 15px;
+	}
+	.review {
+		flex: 2;
+		background-color: #ebebeb;
+		padding: 10px 15px;
+		.cart {
+			margin-bottom: 15px;
+			.product {
+				display: flex;
+				justify-content: space-between;
+				margin: 8px 0;
+				.info {
+					max-width: 150px;
+					.name {
+						font-weight: 500;
+						font-size: 16px;
+						color: #4444de;
+					}
+					.variations {
+						font-style: italic;
+						font-size: 13px;
+					}
+				}
+			}
+		}
+		.subtotal {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			background-color: $primary-color;
+			padding: 10px 10px;
+			margin-top: 30px;
+			.label {
+				font-size: 20px;
+				font-weight: 600;
+				color: #fff;
+			}
+			.value {
+				color: #c61932;
+				font-weight: 800;
+			}
+		}
+	}
+	.delivery {
+		flex: 3;
+		background-color: #ebebeb;
+		padding: 10px 15px 25px;
+		margin: 0 10px;
+		.form {
+			.form-group-half {
+				margin-bottom: 10px;
+				display: flex;
+				.form-input {
+					width: 50%;
+					padding-right: 10px;
+				}
+			}
+			.form-group-full {
+				margin-bottom: 10px;
+				.form-input {
+					width: 100%;
+				}
+			}
+			.form-input {
+				.label {
+					font-size: 14px;
+					font-weight: 500;
+					margin-bottom: 5px;
+					.required {
+						color: red;
+					}
+				}
+				.input {
+					width: 100%;
+					padding: 8px 12px;
+					outline: none;
+					border: 1px solid #ebebeb;
+					font-size: 16px;
+					color: #222;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+	.payment {
+		flex: 2;
+		background-color: #ebebeb;
+		padding: 10px 15px;
+		margin: 0 10px;
+		.payment-method {
+			margin-bottom: 15px;
+			.payment-item {
+				display: flex;
+				margin-bottom: 5px;
+				label {
+					margin-left: 10px;
+					&.label-img {
+						display: inline-flex;
+						align-items: center;
+						margin-left: 5px;
+					}
+					.icon {
+						margin-right: 7px;
+						&.icon-img {
+							display: inline-block;
+							width: 30px;
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+		.checkout-btn {
+			margin-top: 30px;
+			.btn {
+				width: 100%;
+				padding: 15px 0;
+				border: none;
+				outline: none;
+				background-color: $primary-color;
+				color: white;
+				font-size: 20px;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				cursor: pointer;
+				transition: 0.25s all ease-in;
+
+				&:hover {
+					background-color: #222;
+				}
+			}
+			p {
+				color: red;
+				margin-top: 10px;
+			}
+		}
+	}
+}

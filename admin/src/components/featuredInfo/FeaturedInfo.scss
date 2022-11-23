@@ -1,0 +1,42 @@
+.featured {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	.item {
+		flex: 1;
+		margin: 0 20px;
+		padding: 30px;
+		border-radius: 10px;
+		cursor: pointer;
+		box-shadow: 0px 0px 15px -10px rgba($color: #000000, $alpha: 0.75);
+		.title {
+			font-size: 20px;
+		}
+		.money-container {
+			margin: 10px 0;
+			display: flex;
+			align-items: center;
+			.money {
+				font-size: 30px;
+				font-weight: 600;
+			}
+			.rate {
+				display: flex;
+				align-items: center;
+				margin-left: 20px;
+				.icon {
+					font-size: 14px;
+					margin-left: 5px;
+					color: green;
+					&.negative {
+						color: red;
+					}
+				}
+			}
+		}
+		.sub {
+			font-size: 15px;
+			color: gray;
+		}
+	}
+}

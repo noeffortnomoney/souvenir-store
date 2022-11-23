@@ -1,0 +1,41 @@
+.product-list {
+	flex: 4;
+	.create {
+		margin: 20px 0;
+
+		.btn {
+			border: none;
+			padding: 5px 10px;
+			background-color: teal;
+			color: #fff;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			text-decoration: none;
+		}
+	}
+	.list-item {
+		display: flex;
+		align-items: center;
+		.img {
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			object-fit: cover;
+			margin-right: 10px;
+		}
+	}
+	.edit {
+		border: none;
+		border-radius: 10px;
+		padding: 5px 10px;
+		background-color: #3bb077;
+		color: white;
+		cursor: pointer;
+		margin-right: 20px;
+	}
+	.delete {
+		color: red;
+		cursor: pointer;
+	}
+}
