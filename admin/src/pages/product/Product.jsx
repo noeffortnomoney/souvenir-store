@@ -3,7 +3,6 @@ import { InputLabel, MenuItem, TextField } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Chart } from '../../components/chart/Chart';
 import { productData } from '../../dummyData';
 import { formatCurrency } from '../../helpers/format';
 import './Product.scss';
@@ -117,13 +116,7 @@ export const Product = () => {
 				</Link>
 			</div>
 			<div className='top'>
-				<div className='left'>
-					<Chart
-						data={productData}
-						title='Sales Performance'
-						dataKey='Sales'
-					/>
-				</div>
+				<div className='left'></div>
 				<div className='right'>
 					<div className='info-top'>
 						<img src={PF + product?.image} alt='' className='img' />

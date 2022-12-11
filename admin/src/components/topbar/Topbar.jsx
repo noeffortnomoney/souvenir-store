@@ -12,11 +12,11 @@ export const Topbar = () => {
 				<div className='right'>
 					<div className='icons-container'>
 						<NotificationsNone />
-						<span className='icon-badge'>2</span>
+						{/* <span className='icon-badge'>2</span> */}
 					</div>
 					<div className='icons-container'>
 						<Language />
-						<span className='icon-badge'>2</span>
+						{/* <span className='icon-badge'>2</span> */}
 					</div>
 					<div className='icons-container'>
 						<Settings />

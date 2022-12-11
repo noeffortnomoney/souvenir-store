@@ -5,6 +5,7 @@ import {
 	LineStyle,
 	MailOutline,
 	PermIdentity,
+	Receipt,
 	Report,
 	Storefront,
 	Timeline,
@@ -24,81 +25,19 @@ export const Sidebar = () => {
 					<h3 className='title'>Dashboard</h3>
 					<ul className='list'>
 						<NavLink
-							to='/'
+							to='/products'
 							className='list-item'
 							activeclassname='active'>
-							<LineStyle className='icon' />
-							Home
-						</NavLink>
-						<li className='list-item'>
-							<Timeline className='icon' />
-							Analytics
-						</li>
-						<li className='list-item'>
-							<TrendingUp className='icon' />
-							Sales
-						</li>
-					</ul>
-				</div>
-				<div className='menu'>
-					<h3 className='title'>Quick Menu</h3>
-					<ul className='list'>
-						<li className='list-item '>
-							<PermIdentity className='icon' />
-							Users
-						</li>
-						<NavLink
-							to='/products'
-							activeclassname='active'
-							className='list-item'>
 							<Storefront className='icon' />
-							Products
+							Sản phẩm
 						</NavLink>
 						<NavLink
 							to='/orders'
-							activeclassname='active'
-							className='list-item'>
-							<AttachMoney className='icon' />
-							Transactions
+							className='list-item'
+							activeclassname='active'>
+							<Receipt className='icon' />
+							Đơn hàng
 						</NavLink>
-						<li className='list-item'>
-							<TrendingUp className='icon' />
-							Reports
-						</li>
-					</ul>
-				</div>
-				<div className='menu'>
-					<h3 className='title'>Notifications</h3>
-					<ul className='list'>
-						<li className='list-item '>
-							<MailOutline className='icon' />
-							Mail
-						</li>
-						<li className='list-item'>
-							<DynamicFeed className='icon' />
-							Feedback
-						</li>
-						<li className='list-item'>
-							<ChatBubbleOutline className='icon' />
-							Messages
-						</li>
-					</ul>
-				</div>
-				<div className='menu'>
-					<h3 className='title'>Staff</h3>
-					<ul className='list'>
-						<li className='list-item '>
-							<WorkOutline className='icon' />
-							Manage
-						</li>
-						<li className='list-item'>
-							<Timeline className='icon' />
-							Analytics
-						</li>
-						<li className='list-item'>
-							<Report className='icon' />
-							Reports
-						</li>
 					</ul>
 				</div>
 			</div>

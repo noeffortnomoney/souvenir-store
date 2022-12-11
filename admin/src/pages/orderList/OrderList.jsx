@@ -4,6 +4,9 @@ import axios from 'axios';
 import moment from 'moment/moment';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import './OrderList.scss';
 
 export const OrderList = () => {
@@ -22,6 +25,20 @@ export const OrderList = () => {
 		};
 		getAllOrders();
 	}, []);
+
+	const handleDeleteOrder = (id) => {
+		const deleteOrder = async (id) => {
+			const res = await axios.delete(`/order/${id}`);
+			if (res.status === 200) {
+				toast.success('Xóa sản phẩm thành công!');
+				const curOrders = orders.filter((p) => p._id !== id);
+				setOrders(curOrders);
+			} else {
+				toast.error('Lỗi! Vui lòng thử lại');
+			}
+		};
+		deleteOrder(id);
+	};
 
 	const columns = [
 		{ field: '_id', headerName: 'Mã đơn', width: 120 },
@@ -58,6 +75,8 @@ export const OrderList = () => {
 					<button className={'btn ' + params.value}>
 						{params.value === 'pending'
 							? 'Đang chờ'
+							: params.value === 'delivering'
+							? 'Đang giao'
 							: params.value === 'approved'
 							? 'Đã giao'
 							: 'Đã hủy'}
@@ -75,7 +94,10 @@ export const OrderList = () => {
 						<Link to={'/order/' + params.row._id}>
 							<button className='edit'>Chi tiết</button>
 						</Link>
-						<DeleteOutline className='delete' />
+						<DeleteOutline
+							className='delete'
+							onClick={() => handleDeleteOrder(params.row._id)}
+						/>
 					</>
 				);
 			},
@@ -83,6 +105,18 @@ export const OrderList = () => {
 	];
 	return (
 		<div className='order-list'>
+			<ToastContainer
+				position='top-right'
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme='colored'
+			/>
 			<div className='header'>
 				<h1 className='title'>Đơn hàng</h1>
 				<div className='filter'>
