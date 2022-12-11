@@ -36,6 +36,8 @@ export const Checkout = () => {
 	const [isSuccess, setIsSuccess] = useState(true);
 	const [payment, setPayment] = useState('cashdelivery');
 
+	const shipFee = getTotalCart() > 200000 ? 0 : 20000;
+
 	useEffect(() => {
 		setCart(JSON.parse(localStorage.getItem('cart')));
 	}, []);
@@ -116,7 +118,7 @@ export const Checkout = () => {
 			district: district.name,
 			ward: ward.name,
 			payment: payment,
-			value: getTotalCart(),
+			value: getTotalCart() + shipFee,
 		};
 
 		const checkInfoEmpty = Object.values(orderInfo).some(
@@ -156,26 +158,26 @@ export const Checkout = () => {
 					backgroundImage: `url(${PF + 'soap-slider-1.jpg'})`,
 				}}>
 				<div className='text-block'>
-					<h3>Checkout</h3>
+					<h3>Thanh toán</h3>
 					<nav>
 						<Link to='/'>Home</Link>
 						<FontAwesomeIcon
 							icon={solid('chevron-right')}
 							className='icon'
 						/>
-						<Link to={'/cart'}>Cart</Link>
+						<Link to={'/cart'}>Giỏ hàng</Link>
 						<FontAwesomeIcon
 							icon={solid('chevron-right')}
 							className='icon'
 						/>
-						<span>Checkout</span>
+						<span>Thanh toán</span>
 					</nav>
 				</div>
 			</div>
 
 			<div className='checkout-wrapper'>
 				<div className='review'>
-					<h1 className='heading'>1. Review order</h1>
+					<h1 className='heading'>1. Đơn hàng của bạn</h1>
 					<div className='cart'>
 						{cart &&
 							cart.length > 0 &&
@@ -194,8 +196,8 @@ export const Checkout = () => {
 													<div key={index}>
 														<span className='label'>
 															{v}
-														</span>{' '}
-														:
+														</span>
+														:{' '}
 														<span>
 															{item.variations[v]}
 														</span>
@@ -223,36 +225,32 @@ export const Checkout = () => {
 					</div>
 					<div className='delivery-price'>
 						<span>Phí vận chuyển: </span>
-						<span>20.000đ</span>
+						<span>
+							{shipFee > 0 ? formatCurrency(shipFee) : 'Miễn phí'}
+						</span>
 					</div>
 					<div className='subtotal'>
-						<span className='label'>SUBTOTAL :</span>
+						<span className='label'>Tổng đơn hàng :</span>
 						<span className='value'>
-							{formatCurrency(getTotalCart())}
+							{formatCurrency(getTotalCart() + shipFee)}
 						</span>
+					</div>
+					<div className='return-shop'>
+						<div className='info'>
+							* Đơn hàng trên 200.000đ được miễn phí giao hàng
+						</div>
+						<Link className='cart' to='/cart'>
+							Quay lại giỏ hàng
+						</Link>
 					</div>
 				</div>
 				<div className='delivery'>
-					<h1 className='heading'>2. Delivery Address</h1>
+					<h1 className='heading'>2. Thông tin giao hàng</h1>
 					<div className='form'>
-						<div className='form-group-full'>
-							<div className='form-input'>
-								<div className='label'>
-									Email address
-									<span className='required'>*</span>
-								</div>
-								<input
-									type='text'
-									name=''
-									ref={email}
-									className='input'
-								/>
-							</div>
-						</div>
 						<div className='form-group-half'>
 							<div className='form-input'>
 								<div className='label'>
-									First name{' '}
+									Họ:
 									<span className='required'>*</span>
 								</div>
 								<input
@@ -265,7 +263,7 @@ export const Checkout = () => {
 
 							<div className='form-input'>
 								<div className='label'>
-									Last name{' '}
+									Tên:
 									<span className='required'>*</span>
 								</div>
 								<input
@@ -279,7 +277,20 @@ export const Checkout = () => {
 						<div className='form-group-full'>
 							<div className='form-input'>
 								<div className='label'>
-									Telephone{' '}
+									Email :<span className='required'>*</span>
+								</div>
+								<input
+									type='text'
+									name=''
+									ref={email}
+									className='input'
+								/>
+							</div>
+						</div>
+						<div className='form-group-full'>
+							<div className='form-input'>
+								<div className='label'>
+									Số điện thoại
 									<span className='required'>*</span>
 								</div>
 								<input
@@ -393,7 +404,7 @@ export const Checkout = () => {
 					</div>
 				</div>
 				<div className='payment'>
-					<h1 className='heading'>3. payment method</h1>
+					<h1 className='heading'>3. Phương thức thanh toán</h1>
 					<div className='payment-method'>
 						<div className='payment-item'>
 							<input
@@ -409,7 +420,7 @@ export const Checkout = () => {
 									icon={solid('money-bill')}
 									className='icon'
 								/>
-								Cash on delivery
+								Thanh toán khi nhận hàng
 							</label>
 						</div>
 						<div className='payment-item'>
@@ -425,7 +436,7 @@ export const Checkout = () => {
 									icon={regular('credit-card')}
 									className='icon'
 								/>{' '}
-								Credit/debit card
+								Thẻ tín dụng / Thẻ ghi nợ
 							</label>
 						</div>
 						<div className='payment-item'>
@@ -459,7 +470,7 @@ export const Checkout = () => {
 									src={PF + 'zalo-icon.png'}
 									alt=''
 								/>
-								Zalo
+								Zalo Pay
 							</label>
 						</div>
 					</div>

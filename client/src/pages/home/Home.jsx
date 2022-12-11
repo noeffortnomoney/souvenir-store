@@ -17,11 +17,6 @@ export const Home = () => {
 		<>
 			<Header />
 			<div className='home-container'>
-				<div
-					className='slider'
-					style={{
-						backgroundImage: `url(${PF + 'slider.jpg'})`,
-					}}></div>
 				<div className='content'>
 					<div className='list-content'>
 						<div className='content-item'>
@@ -64,22 +59,22 @@ export const Home = () => {
 				<div className='shop'>
 					<div className='shop-header'>
 						<div className='heading'>
-							<h5>Shop now</h5>
-							<h3>Handpicked For You</h3>
+							<h5>Mua ngay</h5>
+							<h3>Chọn sản phẩm mà bạn muốn</h3>
 							<div className='tab-list'>
 								<div className='tab'>
 									<a href='#'>
-										<span>Best sellers</span>
+										<span>Bán chạy nhất</span>
 									</a>
 								</div>
 								<div className='tab'>
 									<a href='#'>
-										<span>New products</span>
+										<span>Sản phẩm mới</span>
 									</a>
 								</div>
 								<div className='tab'>
 									<a href='#'>
-										<span>sale products</span>
+										<span>Sản phẩm giảm giá</span>
 									</a>
 								</div>
 							</div>

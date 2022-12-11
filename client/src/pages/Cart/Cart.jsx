@@ -37,33 +37,33 @@ export const Cart = () => {
 					backgroundImage: `url(${PF + 'soap-slider-1.jpg'})`,
 				}}>
 				<div className='text-block'>
-					<h3>Cart</h3>
+					<h3>Giỏ hàng</h3>
 					<nav>
 						<a href='#'>Home</a>
 						<FontAwesomeIcon
 							icon={solid('chevron-right')}
 							className='icon'
 						/>
-						<span>Cart</span>
+						<span>giỏ hàng</span>
 					</nav>
 				</div>
 			</div>
 
 			<div className='cart-wrapper'>
-				<div className='header'>cart</div>
+				<div className='header'>Giỏ hàng của bạn</div>
 				<div className='body'>
 					{!cart || cart.length === 0 ? (
 						<div className='cart-empty'>
-							Your cart is currently empty
+							Giỏ hàng của bạn hiện tại đang trống. Mua sắm ngay !
 						</div>
 					) : (
 						<table className='list-cart'>
 							<thead>
 								<tr>
-									<th>Product details</th>
-									<th>quantity</th>
-									<th>price</th>
-									<th>total</th>
+									<th>Chi tiết sản phẩm</th>
+									<th>Số lượng</th>
+									<th>Giá tiền</th>
+									<th>Tổng cộng</th>
 								</tr>
 							</thead>
 
@@ -184,18 +184,20 @@ export const Cart = () => {
 					)}
 				</div>
 				<div className='subtotal'>
-					Subtotal : <span>{formatCurrency(getTotalCart())}</span>
+					Tổng đơn hàng :{' '}
+					<span>{formatCurrency(getTotalCart())}</span>
 				</div>
 				<div className='action'>
 					<Link to='/shop' className='return'>
-						Return to shop
+						Quay lại cửa hàng
 					</Link>
 					<Link
 						to='/checkout'
 						className={`checkout + ${
 							cart.length > 0 ? '' : 'disabled'
 						}`}>
-						Check out <FontAwesomeIcon icon={solid('right-long')} />
+						Thanh toán{' '}
+						<FontAwesomeIcon icon={solid('right-long')} />
 					</Link>
 				</div>
 			</div>

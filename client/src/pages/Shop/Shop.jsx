@@ -35,7 +35,7 @@ export const Shop = () => {
 					backgroundImage: `url(${PF + 'soap-slider-1.jpg'})`,
 				}}>
 				<div className='text-block'>
-					<h3>Shop</h3>
+					<h3>Cửa hàng</h3>
 					<nav>
 						<Link to='/'>Home</Link>
 						<FontAwesomeIcon
@@ -51,26 +51,26 @@ export const Shop = () => {
 					<div className='left-bar'>
 						<div className='category'>
 							<h3 className='title'>
-								<span>categories</span>
+								<span>Danh mục</span>
 							</h3>
 							<ul className='categories-list'>
 								<li className='category-item'>
-									<a href='#'>Funny Gifts</a>
+									<a href='#'>Quà tặng</a>
 								</li>
 								<li className='category-item'>
-									<a href='#'>Gifts Bundle</a>
+									<a href='#'>Đồ trang trí</a>
 								</li>
 								<li className='category-item'>
-									<a href='#'>Gifts Ideas</a>
+									<a href='#'>Phong thủy</a>
 								</li>
 								<li className='category-item'>
-									<a href='#'>Home Decor</a>
+									<a href='#'>Trang trí nhà</a>
 								</li>
 							</ul>
 						</div>
 						<div className='filter'>
 							<h3 className='title'>
-								<span>filter</span>
+								<span>Lọc</span>
 							</h3>
 
 							<ul className='list'></ul>
@@ -91,29 +91,24 @@ export const Shop = () => {
 								</div>
 								<div className='ordering'>
 									<select>
-										<option value='' selected>
-											Default Sorting
+										<option value=''>Mặc định</option>
+										<option value=''>
+											Xếp theo độ phổ biến
 										</option>
-										<option value='' selected>
-											Sort by popularity
+										<option value=''>
+											Sản phẩm mới nhất
 										</option>
-										<option value='' selected>
-											Sort by average rating
+										<option value=''>
+											Xếp theo giá: thấp tới cao
 										</option>
-										<option value='' selected>
-											Sort by latest
-										</option>
-										<option value='' selected>
-											Sort by price: low to high
-										</option>
-										<option value='' selected>
-											Sort by price: high to low
+										<option value=''>
+											Xếp theo giá: cao tới thấp
 										</option>
 									</select>
 								</div>
 							</div>
 							<div className='pagination'>
-								<span className='label'>PAGE: </span>
+								<span className='label'>Trang: </span>
 								<div className='page-list'>
 									<div
 										className={`prev btn ${

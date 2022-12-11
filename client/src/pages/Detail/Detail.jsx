@@ -101,11 +101,11 @@ export const Detail = () => {
 							<span className='product-name'>
 								"{product.name}"{' '}
 							</span>
-							<span>has been added to your cart.</span>
+							<span>đã được thêm vào giỏ hàng của bạn.</span>
 						</div>
 
 						<Link to='/cart' className='view-cart'>
-							<span>view cart</span>
+							<span>Xem giỏ hàng</span>
 						</Link>
 					</div>
 				)}
@@ -209,7 +209,7 @@ export const Detail = () => {
 										: 'disabled'
 								}`}
 								onClick={() => handleAddToCart()}>
-								add to cart
+								Thêm vào giỏ
 							</button>
 						</div>
 					</div>

@@ -88,9 +88,9 @@ export const Header = () => {
 						Home
 					</Link>
 					<Link to='/shop' className='nav-item'>
-						Shop
+						Cửa hàng
 					</Link>
-					<a href='#' className='nav-item'>
+					{/* <a href='#' className='nav-item'>
 						Blog
 					</a>
 					<a href='#' className='nav-item'>
@@ -98,7 +98,7 @@ export const Header = () => {
 					</a>
 					<a href='#' className='nav-item'>
 						Contact
-					</a>
+					</a> */}
 				</div>
 			</div>
 		</div>

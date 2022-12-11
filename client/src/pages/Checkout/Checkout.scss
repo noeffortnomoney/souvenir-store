@@ -22,15 +22,17 @@ $primary-color: #af9666;
 				justify-content: space-between;
 				margin: 8px 0;
 				.info {
-					max-width: 150px;
+					max-width: 170px;
 					.name {
 						font-weight: 500;
 						font-size: 16px;
 						color: #4444de;
+						margin-bottom: 3px;
 					}
 					.variations {
 						font-style: italic;
 						font-size: 13px;
+						color: chocolate;
 					}
 				}
 			}
@@ -50,6 +52,21 @@ $primary-color: #af9666;
 			.value {
 				color: #c61932;
 				font-weight: 800;
+			}
+		}
+		.return-shop {
+			margin-top: 10px;
+			.info {
+				font-size: 13px;
+				font-style: italic;
+				color: #c61932;
+			}
+
+			.cart {
+				display: block;
+				margin-top: 5px;
+				color: #4444de;
+				text-decoration: none;
 			}
 		}
 	}
