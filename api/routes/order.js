@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import {
 	createOrder,
+	deleteOrder,
 	getAllOrder,
 	getOrderById,
 	upadteOrder,
@@ -18,5 +19,7 @@ router.get('/', getAllOrder);
 
 // get order by id
 router.get('/:id', getOrderById);
+
+router.delete('/:id', deleteOrder);
 
 export default router;
